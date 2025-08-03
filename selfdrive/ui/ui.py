@@ -52,7 +52,8 @@ if __name__ == "__main__":
     onroad = sm.all_checks(['deviceState']) and sm['deviceState'].started
     if onroad:
       cs = sm['controlsState']
-      color = ("grey" if str(cs.state) in ("overriding", "preEnabled") else "green") if cs.enabled else "blue"
+#     color = ("grey" if str(cs.state) in ("overriding", "preEnabled") else "green") if cs.enabled else "blue"
+      color = ("grey" if str(cs.state) in ("overriding", "preEnabled") else "green") if cs.enabled else "red"
       bg.setText("\U0001F44D" if cs.engageable else "\U0001F6D1")
       bg.setStyleSheet(f"font-size: 100px; background-color: {color};")
       bg.show()
